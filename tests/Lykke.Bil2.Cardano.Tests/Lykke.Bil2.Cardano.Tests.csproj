@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lykke.Bil2.Cardano\Lykke.Bil2.Cardano.csproj" />
+    <ProjectReference Include="..\..\src\Lykke.Bil2.Cardano\Lykke.Bil2.Cardano.csproj" />
   </ItemGroup>
 
 </Project>

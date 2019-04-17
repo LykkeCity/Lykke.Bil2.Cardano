@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Cardano", "Lykke.Bil2.Cardano\Lykke.Bil2.Cardano.csproj", "{D083E164-5D86-4319-BDA7-99FBC0BA28E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Cardano", "src\Lykke.Bil2.Cardano\Lykke.Bil2.Cardano.csproj", "{D083E164-5D86-4319-BDA7-99FBC0BA28E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Cardano.Tests", "Lykke.Bil2.Cardano.Tests\Lykke.Bil2.Cardano.Tests.csproj", "{196EA4DC-53B7-4913-8E0E-66013876AE2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Bil2.Cardano.Tests", "tests\Lykke.Bil2.Cardano.Tests\Lykke.Bil2.Cardano.Tests.csproj", "{196EA4DC-53B7-4913-8E0E-66013876AE2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
