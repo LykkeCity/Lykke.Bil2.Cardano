@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="libcardano_c.dylib" Pack="true" PackagePath="runtimes\osx-64\native" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="libcardano_c.dylib" Pack="true" PackagePath="runtimes\osx-x64\native" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
