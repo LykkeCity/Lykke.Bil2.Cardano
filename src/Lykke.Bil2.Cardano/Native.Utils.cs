@@ -44,8 +44,6 @@ namespace Lykke.Bil2.Cardano
         public static string cardano_address_from_xprv(byte[] xprv, cardano_protocol_magic protocolMagic)
         {
             var xprv_ptr = default(IntPtr); // XPRV
-            var xpub_ptr = default(IntPtr); // XPUB (eXtended PUBlic key)
-            var addr_ptr = default(IntPtr); // address
 
             try
             {
@@ -54,11 +52,7 @@ namespace Lykke.Bil2.Cardano
                     throw new InvalidOperationException("Invalid XPRV data");
                 }
 
-                xpub_ptr = cardano_xprv_to_xpub(xprv_ptr);
-                
-                addr_ptr = cardano_address_new_from_pubkey(xpub_ptr, protocolMagic);
-
-                return cardano_address_export_base58(addr_ptr);
+                return cardano_address_from_xprv(xprv_ptr, protocolMagic);
             }
             finally
             {
@@ -66,12 +60,37 @@ namespace Lykke.Bil2.Cardano
 
                 if (xprv_ptr != default(IntPtr))
                     cardano_xprv_delete(xprv_ptr);
+            }
+        }
 
-                if (xpub_ptr != default(IntPtr))
-                    cardano_xpub_delete(xpub_ptr);
+        /// <summary>
+        /// Constructs address from given XPRV.
+        /// </summary>
+        /// <param name="xprv">XPRV.</param>
+        /// <param name="protocolMagic">Network specifier.</param>
+        /// <returns>Base58 encoded address.</returns>
+        public static string cardano_address_from_xprv(IntPtr xprv, cardano_protocol_magic protocolMagic)
+        {
+            var xpub = default(IntPtr); // XPUB (eXtended PUBlic key)
+            var addr = default(IntPtr); // address
 
-                if (addr_ptr != default(IntPtr))
-                    cardano_address_delete(addr_ptr);
+            try
+            {
+                xpub = cardano_xprv_to_xpub(xprv);
+
+                addr = cardano_address_new_from_pubkey(xpub, protocolMagic);
+
+                return cardano_address_export_base58(addr);
+            }
+            finally
+            {
+                // unmanaged memory cleanup
+
+                if (xpub != default(IntPtr))
+                    cardano_xpub_delete(xpub);
+
+                if (addr != default(IntPtr))
+                    cardano_address_delete(addr);
             }
         }
     }
