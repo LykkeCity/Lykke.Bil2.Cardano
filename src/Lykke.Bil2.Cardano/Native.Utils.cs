@@ -1,10 +1,9 @@
 using System;
 using System.Security.Cryptography;
-using static Lykke.Bil2.Cardano.Native;
 
 namespace Lykke.Bil2.Cardano
 {
-    public static class Utils
+    public static partial class Native
     {
         /// <summary>
         /// Generates new private key and corresponding address for given network.

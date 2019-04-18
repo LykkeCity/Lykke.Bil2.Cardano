@@ -10,13 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="libcardano_c.dylib" Pack="true" PackagePath="runtimes\osx-x64\native" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="libcardano_c.*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="libcardano_c.dylib" Pack="true" PackagePath="runtimes\osx-64\native" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

@@ -12,14 +12,14 @@ namespace Lykke.Bil2.Cardano
         /// <param name="bytes">Extended private key data.</param>
         /// <param name="xprv">Extended private key.</param>
         /// <returns></returns>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern cardano_result cardano_xprv_from_bytes(byte[] bytes, ref IntPtr xprv);
 
         /// <summary>
         /// Free the memory of an object allocated with <see cref="cardano_xprv_from_bytes"/>.
         /// </summary>
         /// <param name="xprv">Pointer to the object in unmanaged memory.</param>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern void cardano_xprv_delete(IntPtr xprv);
 
         /// <summary>
@@ -28,14 +28,14 @@ namespace Lykke.Bil2.Cardano
         /// </summary>
         /// <param name="xprv">Extended private key.</param>
         /// <returns>Public key.</returns>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern IntPtr cardano_xprv_to_xpub(IntPtr xprv);
 
         /// <summary>
         /// Free the memory of an object allocated with <see cref="cardano_xprv_to_xpub"/>.
         /// </summary>
         /// <param name="xpub">Pointer to the object in unmanaged memory.</param>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern void cardano_xpub_delete(IntPtr xpub);
     }
 }

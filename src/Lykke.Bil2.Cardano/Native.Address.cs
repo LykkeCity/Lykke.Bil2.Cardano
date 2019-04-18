@@ -10,7 +10,7 @@ namespace Lykke.Bil2.Cardano
         /// </summary>
         /// <param name="address_base58">Address in base58.</param>
         /// <returns></returns>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern int cardano_address_is_valid(string address_base58);
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace Lykke.Bil2.Cardano
         /// <param name="xpub">Public key.</param>
         /// <param name="protocol_magic">Network specific modifier.</param>
         /// <returns>Address.</returns>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern IntPtr cardano_address_new_from_pubkey(IntPtr xpub, cardano_protocol_magic protocol_magic);
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Lykke.Bil2.Cardano
         /// </summary>
         /// <param name="address">Address.</param>
         /// <returns>Address base58 representation.</returns>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern string cardano_address_export_base58(IntPtr address);
 
         /// <summary>
@@ -37,14 +37,14 @@ namespace Lykke.Bil2.Cardano
         /// </summary>
         /// <param name="address">Address string.</param>
         /// <returns>Address.</returns>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern IntPtr cardano_address_import_base58(string address);
 
         /// <summary>
         /// Free the memory of an object allocated with <see cref="cardano_address_new_from_pubkey"/> or <see cref="cardano_address_import_base58"/>.
         /// </summary>
         /// <param name="address">Pointer to the object in unmanaged memory.</param>
-        [DllImport("cardano_c")]
+        [DllImport(CardanoLib)]
         public static extern void cardano_address_delete(IntPtr address);
     }
 }

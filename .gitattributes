@@ -13,9 +13,13 @@
 
 # Diff settings
 
-*.cs     diff=csharp text 
+*.cs     diff=csharp text
 *.vb     text
 *.ttf     -text diff
 *.eot     -text diff
 *.woff    -text diff
 *.woff2   -text diff
+
+# Binary and should not be modified
+
+*.dylib binary
