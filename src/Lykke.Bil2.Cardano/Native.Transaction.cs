@@ -82,14 +82,6 @@ namespace Lykke.Bil2.Cardano
         public static extern cardano_transaction_error cardano_transaction_builder_finalize(IntPtr tb, ref IntPtr tx);
 
         /// <summary>
-        /// Calculates transaction identifier.
-        /// </summary>
-        /// <param name="tx">Transaction.</param>
-        /// <param name="txid">Byte[32] array to fill with transaction identifier data.</param>
-        [DllImport(CardanoLib)]
-        public static extern void cardano_transaction_id(IntPtr tx, byte[] txid);
-
-        /// <summary>
         /// Free the memory of an object allocated with <see cref="cardano_transaction_builder_finalize"/>.
         /// </summary>
         /// <param name="tx">Pointer to the object in unmanaged memory.</param>
@@ -140,6 +132,22 @@ namespace Lykke.Bil2.Cardano
         /// <param name="tx">Pointer to the object in unmanaged memory.</param>
         [DllImport(CardanoLib)]
         public static extern void cardano_transaction_signed_delete(IntPtr txaux);
+
+        /// <summary>
+        /// Calculates transaction identifier.
+        /// </summary>
+        /// <param name="txaux">Transaction.</param>
+        /// <param name="txid">Byte[32] array to fill with transaction identifier data.</param>
+        [DllImport(CardanoLib)]
+        public static extern void cardano_transaction_id(IntPtr tx, byte[] txid);
+
+        /// <summary>
+        /// Calculates transaction identifier.
+        /// </summary>
+        /// <param name="txaux">Signed transaction.</param>
+        /// <param name="txid">Byte[32] array to fill with transaction identifier data.</param>
+        [DllImport(CardanoLib)]
+        public static extern void cardano_transaction_signed_id(IntPtr txaux, byte[] txid);
 
         /// <summary>
         /// Serializes signed transaction to byte array.
