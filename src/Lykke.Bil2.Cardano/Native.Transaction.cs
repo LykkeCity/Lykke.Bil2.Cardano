@@ -136,18 +136,10 @@ namespace Lykke.Bil2.Cardano
         /// <summary>
         /// Calculates transaction identifier.
         /// </summary>
-        /// <param name="txaux">Transaction.</param>
-        /// <param name="txid">Byte[32] array to fill with transaction identifier data.</param>
-        [DllImport(CardanoLib)]
-        public static extern void cardano_transaction_id(IntPtr tx, byte[] txid);
-
-        /// <summary>
-        /// Calculates transaction identifier.
-        /// </summary>
         /// <param name="txaux">Signed transaction.</param>
         /// <param name="txid">Byte[32] array to fill with transaction identifier data.</param>
         [DllImport(CardanoLib)]
-        public static extern void cardano_transaction_signed_id(IntPtr txaux, byte[] txid);
+        public static extern void cardano_transaction_id(IntPtr txaux, byte[] txid);
 
         /// <summary>
         /// Serializes signed transaction to byte array.
